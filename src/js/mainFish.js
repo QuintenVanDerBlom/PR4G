@@ -20,7 +20,7 @@ export class MainFish extends Actor {
     }
 
     onInitialize(engine) {
-        const fishSprite = Resources.Fish.toSprite(); this.label.text = `Score: ${this.score}`
+        const fishSprite = Resources.Fish.toSprite();
         fishSprite.scale = new Vector(0.3, 0.3); 
         this.graphics.use(fishSprite);
         //Collision Check
