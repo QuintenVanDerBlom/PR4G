@@ -1,5 +1,5 @@
 import { Actor, CollisionType, Color, Vector } from "excalibur";
-import { MainFish } from './mainFish.js';
+import { Player } from './player.js';
 import { Resources } from './resources.js'
 
 export class AmmoPickup extends Actor {
@@ -8,10 +8,10 @@ export class AmmoPickup extends Actor {
             pos: new Vector(x, y),
             width: 50,
             height: 50,
-            
+
         });
 
-        this.collisionType = CollisionType.Passive 
+        this.collisionType = CollisionType.Passive
     }
 
     onInitialize() {

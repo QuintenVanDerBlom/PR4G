@@ -22,9 +22,9 @@ export class Game extends Engine {
         const gameScene = new GameScene();
         const gameOver = new GameOverScene();
 
-        this.add('start', startScene);
-        this.add('game', gameScene);
-        this.add('gameOver', gameOver);
+        this.addScene('start', startScene);
+        this.addScene('game', gameScene);
+        this.addScene('gameOver', gameOver);
 
         this.goToScene('start');
     }

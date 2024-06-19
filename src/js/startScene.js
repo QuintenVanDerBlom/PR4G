@@ -26,7 +26,11 @@ export class StartScene extends Scene {
 
     onPreUpdate(engine, delta) {
         if (engine.input.keyboard.wasPressed(Keys.Space)) {
-            engine.goToScene('game');
+            // Example transition to GameScene with data
+            engine.goToScene('game', { data: { multiplayer: 0 } });
+        } else if (engine.input.keyboard.wasPressed(Keys.Enter)) {
+            // Example transition to GameScene with data
+            engine.goToScene('game', { data: { multiplayer: 1 } });
         }
     }
 }

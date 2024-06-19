@@ -6,13 +6,13 @@ export class GameOverScene extends Scene {
         super();
     }
 
-    onInitialize(engine) {
+    onInitialize(engine, ctx) {
         const background = new ScrollingBackground;
         this.add(background);
 
         const gameOverLabel = new Label({
-            text: 'Game Over! Press SPACE to try again!',
-            pos: new Vector(400, 350), 
+            text: 'Game Over! Press SPACE to try again! Uw Score is opgeslagen!',
+            pos: new Vector(200, 350), 
             color: Color.White,
             font: new Font({
                 family: 'Arial',
@@ -30,4 +30,10 @@ export class GameOverScene extends Scene {
             engine.goToScene('start');
         }
     }
+
+    onDeactivate(ctx = SceneActivationContext) {
+        this.clear();
+        this.onInitialize();
+    }
+
 }

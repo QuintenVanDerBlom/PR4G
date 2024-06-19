@@ -1,7 +1,7 @@
 import { Actor, CollisionType, Vector } from "excalibur";
 import { Resources } from './resources.js'
-import { MainFish } from "./mainFish.js";
 import { Enemy } from "./basicEnemy.js";
+import { Player } from "./player.js";
 
 export class Bullet extends Actor {
     constructor(x, y, velx) {
@@ -11,7 +11,7 @@ export class Bullet extends Actor {
             width: 20,
             height: 20,
             collisionType: CollisionType.Active,
-             vel: new Vector(velx, 0) 
+            vel: new Vector(velx, 0)
         });
     }
 
@@ -38,9 +38,11 @@ export class Bullet extends Actor {
             this.kill();
         }
 
-        if (otherActor instanceof MainFish) {
+        if (otherActor instanceof Player) {
             this.kill();
         }
-        this.kill()
+        if (otherActor instanceof Bullet) {
+            this.kill();
+        }
     }
 }
